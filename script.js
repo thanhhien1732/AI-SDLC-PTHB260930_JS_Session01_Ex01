@@ -23,5 +23,6 @@ function canGetCertificate(progressText, average) {
 }
 
 function buildScoreMessage(rawName, average) {
-  return "Học viên " + rawName + ": " + average + " điểm";
+  const normalizedName = normalizeName(rawName); // Gọi lại hàm normalizeName để chuẩn hóa tên trước khi ghép chuỗi (trước đây dùng trực tiếp rawName chưa bỏ khoảng trắng và chưa viết hoa)
+  return `Học viên ${normalizedName}: ${average} điểm`; // Dùng template literal thay cho phép nối chuỗi bằng dấu + trước đây
 }
